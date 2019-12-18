@@ -20,16 +20,16 @@ PROTOCOL = 'tcp'
 DAYTIME_SERVER = 'time.nist.gov'
 BUFFER = 1024
 
-# create udp IPv4 socket
+# create tcp IPv4 socket
 sock = socket(AF_INET, SOCK_STREAM)
 
 # get the port that daytime service runs over
 svc_port = getservbyname(SVC_NAME, PROTOCOL)
-#svc_port = 10000
+
 # print out the port for verification
 print(f"The {SVC_NAME} service using {PROTOCOL} protocol runs over port {svc_port}.")
 print('Sending message.')
-# send the Daytime Server the message
+# connect to the Daytime Server
 sock.connect((DAYTIME_SERVER, svc_port))
 print('Connected, waiting for reply.')
 # receive the message from the Daytime Server
