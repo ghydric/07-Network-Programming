@@ -2,7 +2,7 @@
 A-Z 0-25
 a-z 26-51
 0-9 52-62
-+,/ 63,64
++,/,= 63,64,65
 """
 # the encoded string to decode
 encoded_string = ""
